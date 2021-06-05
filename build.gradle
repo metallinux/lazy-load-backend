@@ -70,3 +70,16 @@ bootRun {
 		classpath = files("$buildDir/classes/java/main", "$buildDir/resources/main", pathingJar.archivePath)
 	}
 }
+
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.2.0"
+  }
+}
+
+apply plugin: "org.sonarqube"
